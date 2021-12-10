@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Show Tool</title>
+    <!-- Style Sheet Reset, if needed
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css">
+    -->
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <!-- Favicon 
+    <link rel="icon" type="image/jpg" href="images/Favicon_Image_Location"/>
+    -->
+</head>
+<body>
+    <h1>Slideshow Code Generator</h1>
+    <div class="frame">
+        <div class="img-container">
+            <img class="slides slide-1 slideshow" src="Images/village-1.jpeg" alt="">
+            <img class="slides slide-2 slideshow" src="Images/village-2.jpeg" alt="">
+            <img class="slides slide-3 slideshow" src="Images/village-3.jpeg" alt="">
+            <img class="slides slide-4 slideshow" src="Images/village-4.jpeg" alt="">
+        </div>
+    </div>
+    <div class="values-container">
+        <div class="value-wrapper">
+            <label for="img-count"># of Images</label>
+            <input type="number" id="img-count">
+        </div>
+        <div class="value-wrapper">
+            <label for="fade-time">Time of Fade (seconds)</label>
+            <input type="number" id="fade-time">
+        </div>
+        <div class="value-wrapper">
+            <label for="hold-time">Time of Hold (seconds)</label>
+            <input type="number" id="hold-time">
+        </div>
+        <button id="preview-btn">Preview</button>
+        <button id="code-btn">Get Code</button>
+    </div>
+    <div class="results-container">Awaiting Input...</div>
+    <div class="spacer"></div>
+    <script src="script.js"></script>
+</body>
+</html>

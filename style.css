@@ -1,0 +1,181 @@
+:root {
+    --frame-bg: #D4EFFF;
+    --shadow-color: 171deg 34% 58%;
+    --shadow-elevation-low:
+      0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+      0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
+      1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
+    --shadow-elevation-medium:
+      0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
+      0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
+      2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
+      5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
+    --shadow-elevation-high:
+      0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+      1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.34),
+      2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.34),
+      4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.34),
+      7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.34),
+      11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.34),
+      17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
+      25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #e0fffa;
+}
+
+img, picture, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+h1, 
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    overflow-wrap: break-word;
+}
+
+/* Not useful to me now, but will be when I start using React */
+/* 
+#root, #__next {
+    isolation: isolate;
+} */
+
+.bd {
+    border: 1px solid black;
+}
+
+
+/* The Slideshow Preview */
+
+.frame {
+    border: 20px solid var(--frame-bg);
+    box-shadow: var(--shadow-elevation-high);
+    background-color: var(--frame-bg);
+    border-radius: 12px;
+    margin: 60px auto 30px;
+    width: 600px;
+    height: 340px;
+    position: relative;
+}
+
+.slides {
+    position: absolute;
+    opacity: 0;
+    border-radius: 50px;
+    object-fit: cover;
+    object-position: 0px 0px;
+    height: 300px;
+    width: 100%;
+}
+
+.slideshow {
+    animation: slideshow 20s infinite linear;
+}
+
+@keyframes slideshow {
+    20% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    45% {
+        opacity: 0;
+    }
+}
+
+.slide-1 {
+    animation-delay: 0s;
+}
+.slide-2 {
+    animation-delay: 5s;
+}
+.slide-3 {
+    animation-delay: 10s;
+}
+.slide-4 {
+    animation-delay: 15s;
+}
+
+/*Input Styling*/
+
+.values-container {
+    width: 400px;
+    margin: 60px auto;
+    text-align: center;
+    box-shadow: var(--shadow-elevation-medium);
+    border-radius: 10px;
+    padding: 28px;
+}
+
+.value-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.value-wrapper * {
+    width: 50%;
+    text-align: left;
+    margin-top: 15px;
+}
+
+button {
+    margin-top: 15px;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    background-color: #D4EFFF;
+}
+
+.results-container {
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: var(--shadow-elevation-high);
+    color: white;
+    font-family: monospace;
+    line-height: 1.2;
+    width: 700px;
+    padding: 20px 40px 20px;
+    margin:50px auto 150px;
+    /* transition: all 0.3s ease-out; */
+}
+
+.spacer {
+    height: 1px;
+
+}
+
+
