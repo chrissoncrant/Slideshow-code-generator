@@ -102,27 +102,27 @@ codeButton.addEventListener('click', () => {
 })
 
 //keyframe rule:
-console.log(document.styleSheets[0].cssRules);
+// console.log(document.styleSheets[0].cssRules);
 
-console.log(document.styleSheets[0].cssRules[12][0]);
+// console.log(document.styleSheets[0].cssRules[12][0]);
 
-console.log(document.styleSheets[0].cssRules[12]);
-
-console.log(keyframesRules)
-
-// keyframesRules.deleteRule('20%');
-
-// keyframesRules.appendRule(`50% {opacity: 3}`)
+// console.log(document.styleSheets[0].cssRules[12]);
 
 // console.log(keyframesRules)
 
-function findKeyframesRule(rule) {
-    let ss = document.styleSheets;
-    for (let i = 0; i < ss.length; i++) {
-        for (let j = 0; j < ss[i].cssRules.length; j++) {
-            if (ss[i].cssRules[j].name === 0) {}
-        }
+// // keyframesRules.deleteRule('20%');
+
+// // keyframesRules.appendRule(`50% {opacity: 3}`)
+
+// // console.log(keyframesRules)
+
+// function findKeyframesRule(rule) {
+//     let ss = document.styleSheets;
+//     for (let i = 0; i < ss.length; i++) {
+//         for (let j = 0; j < ss[i].cssRules.length; j++) {
+//             if (ss[i].cssRules[j].name === 0) {}
+//         }
         
         
-    }
-}
+//     }
+// }
