@@ -160,7 +160,7 @@ button {
     background-color: #D4EFFF;
 }
 
-.results-container {
+.code-container {
     background-color: black;
     border-radius: 10px;
     box-shadow: var(--shadow-elevation-high);

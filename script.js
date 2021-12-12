@@ -114,7 +114,8 @@ codeButton.addEventListener('click', () => {
     resultsDisplay.setAttribute('style', 'white-space: pre;');
     resultsDisplay.classList.add('results-display');
     let span = document.createElement('span');
-    document.querySelector('.results-container').textContent = "Here's your code!"
+    document.querySelector('.code-container').textContent = "Here's your code!"
     resultsDisplay.textContent = firstHalf + secondHalf;
-    document.querySelector(".results-container").appendChild(resultsDisplay);
+    document.querySelector(".code-container").appendChild(resultsDisplay);
 })
+
