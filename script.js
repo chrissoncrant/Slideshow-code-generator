@@ -5,8 +5,21 @@ const resultsDisplay = document.createElement('div');
 
 const previewButton = document.querySelector('#preview-btn');
 const codeButton = document.querySelector('#code-btn');
-const keyframesRules = document.styleSheets[0].cssRules[12];
+const keyframesRules = findKeyframesRule("slideshow");
 
+function findKeyframesRule(rule) {
+    let ss = document.styleSheets;
+    let cssRules;
+    for (let i = 0; i < ss.length; i++) {
+        cssRules = Array.from(ss[i].cssRules);
+        for (let j = 0; j < cssRules.length; j++) {
+            if (cssRules[j].cssText.includes('@keyframes') && cssRules[j].name == rule) {
+                return cssRules[j];
+            }
+        }
+    }
+    return null;
+}
 function createSlideString(imageCountValue, animationDelay) {
     let finalStr = '';
     for (let i = 1; i < imageCountValue + 1; i++) {
@@ -32,11 +45,11 @@ previewButton.addEventListener('click', () => {
     let holdTimeValue = Number(holdTime.value);
     let animationDuration = 4 * (fadeTimeValue + holdTimeValue);
     let animationDelay = fadeTimeValue + holdTimeValue;
-    console.log(animationDelay);
+    // console.log(animationDelay);
     let k2 = 25;
     let k1 = (fadeTimeValue/animationDelay)* k2;
     k1 = Number(k1.toFixed(2));
-    let k3 = k1 + k2;
+    let k3 = (k1 + k2).toFixed(2);
 
     let delayCalc = 0;
     function calcDelay() {
@@ -50,9 +63,14 @@ previewButton.addEventListener('click', () => {
         delayCalc += animationDelay;
     }
 
-    keyframesRules.deleteRule('20%');
-    keyframesRules.deleteRule('25%');
-    keyframesRules.deleteRule('45%');
+    console.log(keyframesRules);
+    console.log(keyframesRules[1].keyText)
+    console.log(`${keyframesRules[1].keyText}`);
+    keyframesRules.deleteRule(`${keyframesRules[0].keyText}`);
+    keyframesRules.deleteRule(`${keyframesRules[0].keyText}`);
+    keyframesRules.deleteRule(`${keyframesRules[0].keyText}`);
+    // keyframesRules.deleteRule('25%');
+    // keyframesRules.deleteRule('45%');
     keyframesRules.appendRule(`${k1}% {opacity: 1;}`);
     keyframesRules.appendRule(`${k2}% {opacity: 1;}`);
     keyframesRules.appendRule(`${k3}% {opacity: 0;}`);
@@ -70,7 +88,7 @@ codeButton.addEventListener('click', () => {
     let k2 = Number((100/imageCountValue).toFixed(2));
     let k1 = (fadeTimeValue/animationDelay)* k2;
     k1 = Number(k1.toFixed(2));
-    let k3 = k1 + k2;
+    let k3 = (k1 + k2).toFixed(2);;
 
    
     let firstHalf = `
@@ -100,29 +118,3 @@ codeButton.addEventListener('click', () => {
     resultsDisplay.textContent = firstHalf + secondHalf;
     document.querySelector(".results-container").appendChild(resultsDisplay);
 })
-
-//keyframe rule:
-// console.log(document.styleSheets[0].cssRules);
-
-// console.log(document.styleSheets[0].cssRules[12][0]);
-
-// console.log(document.styleSheets[0].cssRules[12]);
-
-// console.log(keyframesRules)
-
-// // keyframesRules.deleteRule('20%');
-
-// // keyframesRules.appendRule(`50% {opacity: 3}`)
-
-// // console.log(keyframesRules)
-
-// function findKeyframesRule(rule) {
-//     let ss = document.styleSheets;
-//     for (let i = 0; i < ss.length; i++) {
-//         for (let j = 0; j < ss[i].cssRules.length; j++) {
-//             if (ss[i].cssRules[j].name === 0) {}
-//         }
-        
-        
-//     }
-// }
