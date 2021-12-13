@@ -27,16 +27,16 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
 * {
     margin: 0;
 }
 
-html, body {
+/* html, body {
     height: 100%;
-}
+} */
 
 body {
     line-height: 1.6;
@@ -44,6 +44,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: var(--main-bg);
     color: var(--black);
+    /* border: 4px teal solid; */
 }
 
 img, picture, video, canvas, svg {
@@ -114,7 +115,7 @@ p {
 }
 
 .content-wrapper {
-    width: 660px;
+    width: 600px;
     margin: 20px auto;
     background-color: var(--main-bg);
     border-radius: 10px;
@@ -126,8 +127,6 @@ p {
 }
 
 /* The Slideshow Preview */
-
-
 .current-settings {
     font-size: 12px;
     transition: 0.5s ease;
@@ -222,7 +221,7 @@ button {
 .code-container {
     background-color: var(--black);
     border-radius: 10px;
-    box-shadow: var(--shadow-elevation-high);
+    box-shadow: var(--shadow-elevation-medium);
     color: white;
     font-family: monospace;
     font-size: 17px;
