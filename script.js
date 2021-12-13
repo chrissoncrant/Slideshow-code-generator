@@ -1,10 +1,11 @@
 const imageCount = document.querySelector('#img-count');
 const fadeTime = document.querySelector('#fade-time');
 const holdTime = document.querySelector('#hold-time');
-const resultsDisplay = document.createElement('div');
-
-const previewButton = document.querySelector('#preview-btn');
 const codeButton = document.querySelector('#code-btn');
+const codeContainer = document.querySelectorAll('.code-container')[2];
+const codeDisplay = document.createElement('div');
+const previewButton = document.querySelector('#preview-btn');
+
 const keyframesRules = findKeyframesRule("slideshow");
 
 function findKeyframesRule(rule) {
@@ -38,14 +39,51 @@ function createSlideString(imageCountValue, animationDelay) {
         }
     };
     return finalStr;
-}
+};
+
+document.querySelector('.white-space.css-code').textContent = `CSS:
+
+    .frame {
+        /*For functionality*/
+        position: relative;
+
+        /*For styling and positioning of the frame*/
+        border: 20px solid var(--frame-bg);
+        box-shadow: var(--shadow-elevation-high);
+        background-color: var(--frame-bg);
+        border-radius: 12px;
+        margin: 30px auto 30px;
+        width: 600px;
+        height: 340px;
+        
+    }
+
+    .slides {
+        /*For functionality*/
+        position: absolute;
+        opacity: 0;
+
+        /*For styling and positioning of the image*/
+        border-radius: 5px;
+        object-position: 0px 0px;
+        height: 300px;
+        width: 100%;
+    }`;
+
+document.querySelector('.white-space.html-code').textContent = `HTML:
+
+    <div class="frame">
+        <img class="slides slide-1 slideshow" 
+        src="#"  alt="...">
+        <img class="slides slide-2 slideshow" 
+        src="#" alt="...">
+    </div>`;
 
 previewButton.addEventListener('click', () => {
     let fadeTimeValue = Number(fadeTime.value);
     let holdTimeValue = Number(holdTime.value);
     let animationDuration = 4 * (fadeTimeValue + holdTimeValue);
     let animationDelay = fadeTimeValue + holdTimeValue;
-    // console.log(animationDelay);
     let k2 = 25;
     let k1 = (fadeTimeValue/animationDelay)* k2;
     k1 = Number(k1.toFixed(2));
@@ -63,18 +101,16 @@ previewButton.addEventListener('click', () => {
         delayCalc += animationDelay;
     }
 
-    console.log(keyframesRules);
-    console.log(keyframesRules[1].keyText)
-    console.log(`${keyframesRules[1].keyText}`);
+    document.querySelector('.current-settings').style.color = "#e0fffa";
+
+    // console.log(keyframesRules);
     keyframesRules.deleteRule(`${keyframesRules[0].keyText}`);
     keyframesRules.deleteRule(`${keyframesRules[0].keyText}`);
     keyframesRules.deleteRule(`${keyframesRules[0].keyText}`);
-    // keyframesRules.deleteRule('25%');
-    // keyframesRules.deleteRule('45%');
     keyframesRules.appendRule(`${k1}% {opacity: 1;}`);
     keyframesRules.appendRule(`${k2}% {opacity: 1;}`);
     keyframesRules.appendRule(`${k3}% {opacity: 0;}`);
-    console.log(keyframesRules);
+    // console.log(keyframesRules);
 })
 
 
@@ -109,13 +145,11 @@ codeButton.addEventListener('click', () => {
 }
     `;
 
-    let secondHalf = `${createSlideString(imageCountValue, animationDelay)}
-    `
-    resultsDisplay.setAttribute('style', 'white-space: pre;');
-    resultsDisplay.classList.add('results-display');
-    let span = document.createElement('span');
-    document.querySelector('.code-container').textContent = "Here's your code!"
-    resultsDisplay.textContent = firstHalf + secondHalf;
-    document.querySelector(".code-container").appendChild(resultsDisplay);
+    let secondHalf = `${createSlideString(imageCountValue, animationDelay)}`;
+
+    codeDisplay.classList.add('white-space');
+    codeContainer.textContent = "Here's your code!";
+    codeDisplay.textContent = firstHalf + secondHalf;
+    codeContainer.appendChild(codeDisplay);
 })
 

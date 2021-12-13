@@ -14,34 +14,48 @@
     -->
 </head>
 <body>
-    <h1>Slideshow Code Generator</h1>
-    <h2></h2>
-    <div class="frame">
-        <div class="img-container">
-            <img class="slides slide-1 slideshow" src="Images/village-1.jpeg" alt="">
-            <img class="slides slide-2 slideshow" src="Images/village-2.jpeg" alt="">
-            <img class="slides slide-3 slideshow" src="Images/village-3.jpeg" alt="">
-            <img class="slides slide-4 slideshow" src="Images/village-4.jpeg" alt="">
+    <div class="outer-container med-shadow pd-vert">
+        <div class="content-wrapper low-shadow">
+            <div class="instructions-wrapper">
+                <h1 class="pd-left pd-vert mg-btm low-shadow lighter-bg-color">Slideshow Code Generator</h1>
+                <h2 class="pd-left">Setup:</h2>
+                <div class="code-container">
+                    <div class="white-space html-code"></div>
+                </div>
+                <div class="code-container">
+                    <div class="white-space css-code"></div>
+                </div>
+            </div>
+            <div class="preview-wrapper">
+                <h2 class="pd-left pd-vert low-shadow mg-btm lighter-bg-color">Preview:</h2>
+                <span class="pd-left current-settings">Displaying with fade at 4s and hold at 1s</span>
+                <div class="frame">
+                    <img class="slides slide-1 slideshow" src="Images/village-1.jpeg" alt="">
+                    <img class="slides slide-2 slideshow" src="Images/village-2.jpeg" alt="">
+                    <img class="slides slide-3 slideshow" src="Images/village-3.jpeg" alt="">
+                    <img class="slides slide-4 slideshow" src="Images/village-4.jpeg" alt="">
+                </div>
+            </div>
+            <div class="values-container">
+                <div class="value-wrapper">
+                    <label for="img-count"># of Images</label>
+                    <input type="number" id="img-count">
+                </div>
+                <div class="value-wrapper">
+                    <label for="fade-time">Time of Fade (seconds)</label>
+                    <input type="number" id="fade-time">
+                </div>
+                <div class="value-wrapper">
+                    <label for="hold-time">Time of Hold (seconds)</label>
+                    <input type="number" id="hold-time">
+                </div>
+                <button id="preview-btn">Preview</button>
+                <button id="code-btn">Get Code</button>
+            </div>
+            <div class="code-container">Awaiting Input...</div>
+            <div class="spacer"></div>
         </div>
     </div>
-    <div class="values-container">
-        <div class="value-wrapper">
-            <label for="img-count"># of Images</label>
-            <input type="number" id="img-count">
-        </div>
-        <div class="value-wrapper">
-            <label for="fade-time">Time of Fade (seconds)</label>
-            <input type="number" id="fade-time">
-        </div>
-        <div class="value-wrapper">
-            <label for="hold-time">Time of Hold (seconds)</label>
-            <input type="number" id="hold-time">
-        </div>
-        <button id="preview-btn">Preview</button>
-        <button id="code-btn">Get Code</button>
-    </div>
-    <div class="code-container">Awaiting Input...</div>
-    <div class="spacer"></div>
     <script src="script.js"></script>
 </body>
 </html>
