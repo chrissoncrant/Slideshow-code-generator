@@ -207,6 +207,15 @@ p {
     margin-top: 15px;
 }
 
+.value-wrapper input {
+    outline: none;
+    appearance: none;
+    border: 1px solid hsl(var(--shadow-color) / 0.34);
+    border-radius: 3px;
+    height: 32px;
+    padding-left: 8px;
+}
+
 button {
     margin-top: 15px;
     width: 100%;
@@ -240,5 +249,4 @@ button {
     height: 1px;
 
 }
-
 
