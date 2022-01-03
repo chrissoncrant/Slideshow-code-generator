@@ -74,6 +74,14 @@ p {
     isolation: isolate;
 } */
 
+h1 {
+    text-align: center;
+}
+
+p {
+    margin: 10px 0;
+}
+
 .bd {
     border: 1px solid black;
 }
@@ -91,7 +99,7 @@ p {
 }
 
 .pd-left {
-    padding-left: 20px;
+    padding:0 10px;
 }
 
 .pd-vert {
@@ -123,7 +131,7 @@ p {
 }
 
 .instructions-wrapper .code-container {
-    margin-top: 3px;
+    margin: 13px auto;
 }
 
 /* The Slideshow Preview */
@@ -237,7 +245,7 @@ button {
     line-height: 1.2;
     width: 100%;
     padding: 20px;
-    margin: 50px auto 70px;
+    margin:auto;
     /* transition: all 0.3s ease-out; */
 }
 

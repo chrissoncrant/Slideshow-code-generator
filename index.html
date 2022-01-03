@@ -18,12 +18,51 @@
         <div class="content-wrapper">
             <div class="instructions-wrapper">
                 <h1 class="pd-left pd-vert mg-btm low-shadow lighter-bg-color">Slideshow Code Generator</h1>
-                <h2 class="pd-left">Setup:</h2>
-                <div class="code-container">
-                    <div class="white-space html-code"></div>
+                <div class="pd-left overview-container">
+                    <h2>Overview</h2>
+                    <div class="explanation">
+                        <h4>Why:</h4>
+                        <p>Creating slideshows with images is a popular feature on many websites. Calculating the keyframe values for a smooth, evenly playing slideshow can be tricky.</p>
+                    </div>
+                    <div class="explanation">
+                        <h4>What:</h4>
+                        <p>This tool quickly and easily allows you to set your slideshow preference and generate the code to copy and paste into your project.</p>
+                    </div>
+                    <div class="explanation">
+                        <h4>Who:</h4>
+                        <p>This code is for people relatively familiar with CSS and HTML.</p>
+                    </div>
                 </div>
-                <div class="code-container">
-                    <div class="white-space css-code"></div>
+                
+                <div class="setup-container">
+                    <h2 class="pd-left">Setup</h2>
+                    <div class="pd-left explanation">
+                        <h4>The HTML</h4>
+                        <p>We have a div that serves as the frame and within this frame we have our image elements.</p>
+                    </div>
+                    <div class="code-container">
+                        <div class="white-space html-code"></div>
+                    </div>
+                    <div class="pd-left explanation">
+                        <h4>The CSS</h4>
+                        <p>The frame is given dimensions and its border and background color are set.</p>
+                        <p>The key CSS rules here are the absolute positioning of  "slides" and the opacity value. These rules give the slideshow its functionality.</p>
+                        <p>Absolute positioning of the slides stacks them atop one another and the opacity value gets animated to reveal and hide the images.</p>
+                    </div>
+                    <div class="code-container">
+                        <div class="white-space css-code"></div>
+                    </div>
+                    <p class="pd-left">With this basic structure in place we are ready to start animating!</p>
+                </div>
+
+                <div class="pd-left explanation-container">
+                    <h2 class="">How it works</h2>
+                    <div class="explanation">
+                        <p>The Preview helps you test different Fade and Hold times.</p>
+                        <p>To use it, enter Fade and Hold times then hit the "Preview" button and the Preview will adjust accordingly.</p>
+                        <p>Once desired Fade and Hold times are in place, enter the number of images that are in your slideshow and hit the "Get Code" button. The code will display below for copying and pasting pleasure. </p>
+                        <p>Cheers!</p>
+                    </div>
                 </div>
             </div>
             <div class="preview-wrapper">

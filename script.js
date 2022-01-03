@@ -44,10 +44,7 @@ function createSlideString(imageCountValue, animationDelay) {
 document.querySelector('.white-space.css-code').textContent = `CSS:
 
     .frame {
-        // For functionality:
         position: relative;
-
-        // For styling and positioning of the frame:
         border: 20px solid white;
         background-color: white;
         border-radius: 12px;
@@ -57,11 +54,8 @@ document.querySelector('.white-space.css-code').textContent = `CSS:
     }
 
     .slides {
-        // For functionality:
         position: absolute;
         opacity: 0;
-
-        // For styling and positioning of the image:
         border-radius: 5px;
         height: 300px;
         width: 100%;
