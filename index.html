@@ -17,33 +17,38 @@
     <div class="outer-container high-shadow pd-vert">
         <div class="content-wrapper">
             <div class="instructions-wrapper">
-                <h1 class="pd-left pd-vert mg-btm low-shadow lighter-bg-color">Slideshow Code Generator</h1>
-                <div class="pd-left overview-container">
-                    <h2>Overview</h2>
+                <h1 class="pd-vert mg-btm low-shadow lighter-bg-color">Slideshow Code Generator</h1>
+
+                <div class="source">This project was inspired by the article found here: <br><a href="https://snook.ca/archives/html_and_css/simplest-css-slideshow" target="_blank">Simplest CSS Slideshow</a></div>
+                
+                <h2>Overview</h2>
+                <div class="overview-container pd-vert pd-horiz low-shadow lighter-bg-color">
                     <div class="explanation">
-                        <h4>Why:</h4>
+                        <h4>Why</h4>
                         <p>Creating slideshows with images is a popular feature on many websites. Calculating the keyframe values for a smooth, evenly playing slideshow can be tricky.</p>
                     </div>
                     <div class="explanation">
-                        <h4>What:</h4>
+                        <h4>What</h4>
                         <p>This tool quickly and easily allows you to set your slideshow preference and generate the code to copy and paste into your project.</p>
+                        <p>The slideshow will be built using only HTML and CSS.</p>
                     </div>
                     <div class="explanation">
-                        <h4>Who:</h4>
+                        <h4>Who</h4>
                         <p>This code is for people relatively familiar with CSS and HTML.</p>
                     </div>
+                    
                 </div>
                 
                 <div class="setup-container">
                     <h2 class="pd-left">Setup</h2>
-                    <div class="pd-left explanation">
+                    <div class="explanation pd-vert pd-horiz low-shadow lighter-bg-color br">
                         <h4>The HTML</h4>
                         <p>We have a div that serves as the frame and within this frame we have our image elements.</p>
                     </div>
                     <div class="code-container">
                         <div class="white-space html-code"></div>
                     </div>
-                    <div class="pd-left explanation">
+                    <div class="explanation pd-vert pd-horiz low-shadow lighter-bg-color br">
                         <h4>The CSS</h4>
                         <p>The frame is given dimensions and its border and background color are set.</p>
                         <p>The key CSS rules here are the absolute positioning of  "slides" and the opacity value. These rules give the slideshow its functionality.</p>
@@ -52,22 +57,23 @@
                     <div class="code-container">
                         <div class="white-space css-code"></div>
                     </div>
-                    <p class="pd-left">With this basic structure in place we are ready to start animating!</p>
+                    <p class="pd-vert pd-horiz low-shadow lighter-bg-color" style="font-weight: bold; text-align: center;">With this basic structure in place we are ready to start animating!</p>
                 </div>
 
-                <div class="pd-left explanation-container">
-                    <h2 class="">How it works</h2>
-                    <div class="explanation">
-                        <p>The Preview helps you test different Fade and Hold times.</p>
-                        <p>To use it, enter Fade and Hold times then hit the "Preview" button and the Preview will adjust accordingly.</p>
-                        <p>Once desired Fade and Hold times are in place, enter the number of images that are in your slideshow and hit the "Get Code" button. The code will display below for copying and pasting pleasure. </p>
+                <div class="explanation-container">
+                    <h2 class="">How This Tool Works</h2>
+                    <div class="explanation pd-vert pd-horiz low-shadow lighter-bg-color br">
+                        <p>The Preview helps you test different Fade and Hold time combinations.</p>
+                        <p>To use it, enter/change the Fade and Hold times then hit the "Preview" button and the Preview will adjust accordingly.</p>
+                        <p>Once your desired Fade and Hold times are in place, enter the number of images that are in your slideshow and hit the "Get Code" button. The code will display below for copying and pasting pleasure. </p>
                         <p>Cheers!</p>
                     </div>
                 </div>
             </div>
+
             <div class="preview-wrapper">
-                <h2 class="pd-left pd-vert low-shadow mg-btm lighter-bg-color">Preview:</h2>
-                <span class="pd-left current-settings">Displaying with fade at 4s and hold at 1s</span>
+                <h2>Preview</h2>
+                <span class="pd-horiz current-settings">Displaying with fade at 4s and hold at 1s</span>
                 <div class="frame">
                     <img class="slides slide-1 slideshow" src="Images/village-1.jpeg" alt="">
                     <img class="slides slide-2 slideshow" src="Images/village-2.jpeg" alt="">
@@ -75,6 +81,7 @@
                     <img class="slides slide-4 slideshow" src="Images/village-4.jpeg" alt="">
                 </div>
             </div>
+
             <div class="values-container">
                 <h2 class="pd-left pd-vert low-shadow mg-btm lighter-bg-color">Code Generator</h2>
                 <div class="value-wrapper">
@@ -92,7 +99,9 @@
                 <button id="preview-btn">Preview</button>
                 <button id="code-btn">Get Code</button>
             </div>
+
             <div class="code-container">Awaiting Input...</div>
+
             <div class="spacer"></div>
         </div>
     </div>

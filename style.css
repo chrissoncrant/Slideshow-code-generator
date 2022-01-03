@@ -1,5 +1,5 @@
 :root {
-    --vert-pad: 10px;
+    --vert-pad: 15px;
     --black: rgb(34, 32, 36);
     --main-bg: #e0fffa;
     --frame-bg: #D4EFFF;
@@ -74,16 +74,28 @@ p {
     isolation: isolate;
 } */
 
-h1 {
+h1, h2 {
     text-align: center;
 }
 
+h2 {
+    margin-bottom: 10px;
+}
+
+h4 {
+    margin-bottom: 6px;
+}
+
 p {
-    margin: 10px 0;
+    margin: 6px 0 18px;
 }
 
 .bd {
     border: 1px solid black;
+}
+
+.br {
+    border-radius: 12px;
 }
 
 .low-shadow {
@@ -98,8 +110,8 @@ p {
     box-shadow: var(--shadow-elevation-high);
 }
 
-.pd-left {
-    padding:0 10px;
+.pd-horiz {
+    padding:0 30px;
 }
 
 .pd-vert {
@@ -122,6 +134,17 @@ p {
     background-color: #e0fffa;
 }
 
+.source {
+    font-style:italic;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.overview-container, .setup-container, .explanation-container {
+    border-radius: 12px;
+    margin-bottom: 48px;
+}
+
 .content-wrapper {
     width: 600px;
     margin: 20px auto;
@@ -131,7 +154,7 @@ p {
 }
 
 .instructions-wrapper .code-container {
-    margin: 13px auto;
+    margin: 13px auto 43px;
 }
 
 /* The Slideshow Preview */
@@ -245,7 +268,7 @@ button {
     line-height: 1.2;
     width: 100%;
     padding: 20px;
-    margin:auto;
+    margin: auto;
     /* transition: all 0.3s ease-out; */
 }
 
