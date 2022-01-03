@@ -48,11 +48,9 @@ document.querySelector('.white-space.css-code').textContent = `CSS:
         position: relative;
 
         // For styling and positioning of the frame:
-        border: 20px solid var(--frame-bg);
-        box-shadow: var(--shadow-elevation-high);
-        background-color: var(--frame-bg);
+        border: 20px solid white;
+        background-color: white;
         border-radius: 12px;
-        margin: 30px auto 30px;
         width: 600px;
         height: 340px;
         
@@ -65,7 +63,6 @@ document.querySelector('.white-space.css-code').textContent = `CSS:
 
         // For styling and positioning of the image:
         border-radius: 5px;
-        object-position: 0px 0px;
         height: 300px;
         width: 100%;
     }`;

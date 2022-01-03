@@ -135,7 +135,7 @@ p {
 
 .frame {
     border: 20px solid var(--frame-bg);
-    box-shadow: var(--shadow-elevation-high);
+    box-shadow: var(--shadow-elevation-medium);
     background-color: var(--frame-bg);
     border-radius: 12px;
     margin: 0px auto 30px;
@@ -149,7 +149,7 @@ p {
     opacity: 0;
     border-radius: 5px;
     /* object-fit: cover; */
-    object-position: 0px 0px;
+    /* object-position: 0px 0px; */
     height: 300px;
     width: 100%;
 }
