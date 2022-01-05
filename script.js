@@ -5,6 +5,7 @@ const codeButton = document.querySelector('#code-btn');
 const codeContainer = document.querySelectorAll('.code-container')[2];
 const codeDisplay = document.createElement('div');
 const previewButton = document.querySelector('#preview-btn');
+const errorDiv = document.querySelector("#error");
 
 
 
@@ -23,6 +24,7 @@ function findKeyframesRule(rule) {
     }
     return null;
 }
+
 function createSlideString(imageCountValue, animationDelay) {
     let finalStr = '';
     for (let i = 1; i < imageCountValue + 1; i++) {
@@ -73,6 +75,29 @@ document.querySelector('.white-space.html-code').textContent = `HTML:
     </div>`;
 
 previewButton.addEventListener('click', () => {
+    if (fadeTime.value === '' || fadeTime.value <= 0) {
+        fadeTime.style.border = "red solid 1px";
+        fadeTime.style.boxShadow = "0px 0px 8px red";
+        errorDiv.style.opacity = "1";
+        return;
+    } else {
+        fadeTime.style.border = "1px solid hsl(var(--shadow-color) / 0.34)";
+        fadeTime.style.boxShadow = "0px 0px 0px red";
+    }
+
+    if (holdTime.value === '' || holdTime.value <= 0) {
+        holdTime.style.border = "red solid 1px";
+        holdTime.style.boxShadow = "0px 0px 8px red";
+        errorDiv.style.display = "block";
+        return;
+    } else {
+        holdTime.style.border = "1px solid hsl(var(--shadow-color) / 0.34)";
+        holdTime.style.boxShadow = "0px 0px 0px red";
+    }
+
+    errorDiv.style.opacity = "0";
+
+    
     let fadeTimeValue = Number(fadeTime.value);
     let holdTimeValue = Number(holdTime.value);
     let animationDuration = 4 * (fadeTimeValue + holdTimeValue);
@@ -108,6 +133,35 @@ previewButton.addEventListener('click', () => {
 
 
 codeButton.addEventListener('click', () => {
+    if (fadeTime.value === '' || holdTime.value === '') {
+        errorDiv.textContent = "Please enter Fade and Hold values.";
+        errorDiv.style.opacity = "1";
+        fadeTime.style.border = "red solid 1px";
+        fadeTime.style.boxShadow = "0px 0px 8px red";
+        holdTime.style.border = "red solid 1px";
+        holdTime.style.boxShadow = "0px 0px 8px red";
+        return;
+    } else {
+        errorDiv.textContent = "Only numbers above zero will work.";
+        fadeTime.style.border = "1px solid hsl(var(--shadow-color) / 0.34)";
+        fadeTime.style.boxShadow = "0px 0px 0px red";
+        holdTime.style.border = "1px solid hsl(var(--shadow-color) / 0.34)";
+        holdTime.style.boxShadow = "0px 0px 0px red";
+
+    }
+    
+    if (imageCount.value === ''  || imageCount.value <= 0) {
+        imageCount.style.border = "red solid 1px";
+        imageCount.style.boxShadow = "0px 0px 8px red";
+        errorDiv.style.opacity = "1";
+        return;
+    } else {
+        imageCount.style.border = "1px solid hsl(var(--shadow-color) / 0.34)";
+        imageCount.style.boxShadow = "0px 0px 0px red";
+    }
+
+    errorDiv.style.opacity = "0";
+    
     let imageCountValue = Number(imageCount.value);
     let fadeTimeValue = Number(fadeTime.value);
     let holdTimeValue = Number(holdTime.value);
@@ -115,9 +169,12 @@ codeButton.addEventListener('click', () => {
     let animationDuration = imageCountValue * (fadeTimeValue + holdTimeValue);
     let animationDelay = fadeTimeValue + holdTimeValue;
     let k2 = Number((100/imageCountValue).toFixed(2));
+    console.log("k2: ", k2);
     let k1 = (fadeTimeValue/animationDelay)* k2;
     k1 = Number(k1.toFixed(2));
-    let k3 = (k1 + k2).toFixed(2);;
+    console.log("k1: ", k1);
+
+    let k3 = Number((k1 + k2).toFixed(2));
 
    
     let firstHalf = `

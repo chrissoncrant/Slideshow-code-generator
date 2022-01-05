@@ -246,6 +246,7 @@ p {
     border-radius: 3px;
     height: 32px;
     padding-left: 8px;
+    transition: 0.2s ease;
 }
 
 button {
@@ -273,6 +274,18 @@ button {
     /* transition: all 0.3s ease-out; */
 }
 
+#error {
+    position: absolute;
+    text-align: center;
+    font-size: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 16px;
+    color: red;
+    opacity: 0;
+    transition: 0.2s ease;
+}
+
 .preview-wrapper {
     text-align: center;
 }
@@ -287,6 +300,5 @@ button {
 
 .spacer {
     height: 1px;
-
 }
 
