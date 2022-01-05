@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="explanation-container">
-                    <h2 class="">How This Tool Works</h2>
+                    <h2 class="">How It Works</h2>
                     <div class="explanation pd-vert pd-horiz low-shadow lighter-bg-color br">
                         <p>The Preview helps you test different Fade and Hold time combinations.</p>
                         <p>To use it, enter/change the Fade and Hold times then hit the "Preview" button and the Preview will adjust accordingly.</p>
@@ -71,33 +71,35 @@
                 </div>
             </div>
 
-            <div class="preview-wrapper">
-                <h2>Preview</h2>
-                <span class="pd-horiz current-settings">Displaying with fade at 4s and hold at 1s</span>
-                <div class="frame">
-                    <img class="slides slide-1 slideshow" src="Images/village-1.jpeg" alt="">
-                    <img class="slides slide-2 slideshow" src="Images/village-2.jpeg" alt="">
-                    <img class="slides slide-3 slideshow" src="Images/village-3.jpeg" alt="">
-                    <img class="slides slide-4 slideshow" src="Images/village-4.jpeg" alt="">
+            <div class="calculator-contianer">
+                <div class="preview-wrapper">
+                    <h2>The Slideshow Code Generator</h2>
+                    
+                    <div class="frame">
+                        <img class="slides slide-1 slideshow" src="Images/village-1.jpeg" alt="">
+                        <img class="slides slide-2 slideshow" src="Images/village-2.jpeg" alt="">
+                        <img class="slides slide-3 slideshow" src="Images/village-3.jpeg" alt="">
+                        <img class="slides slide-4 slideshow" src="Images/village-4.jpeg" alt="">
+                    </div>
+                    <span class="current-settings">Displaying with fade at 4s and hold at 1s</span>
                 </div>
-            </div>
+                <div class="values-container low-shadow lighter-bg-color">
+                    <div class="value-wrapper">
+                        <label for="fade-time">Fade (seconds)</label>
+                        <input type="number" id="fade-time">
+                    </div>
+                    <div class="value-wrapper">
+                        <label for="hold-time">Hold (seconds)</label>
+                        <input type="number" id="hold-time">
+                    </div>
+                    <button id="preview-btn">Preview</button>
+                    <div class="value-wrapper">
+                        <label for="img-count"># of Images</label>
+                        <input type="number" id="img-count">
+                    </div>
+                    <button id="code-btn">Get Code</button>
+                </div>
 
-            <div class="values-container low-shadow lighter-bg-color">
-                <!-- <h2 class="pd-left pd-vert mg-btm">Code Generator</h2> -->
-                <div class="value-wrapper">
-                    <label for="img-count"># of Images</label>
-                    <input type="number" id="img-count">
-                </div>
-                <div class="value-wrapper">
-                    <label for="fade-time">Time of Fade (seconds)</label>
-                    <input type="number" id="fade-time">
-                </div>
-                <div class="value-wrapper">
-                    <label for="hold-time">Time of Hold (seconds)</label>
-                    <input type="number" id="hold-time">
-                </div>
-                <button id="preview-btn">Preview</button>
-                <button id="code-btn">Get Code</button>
             </div>
 
             <div class="code-container">Awaiting Input...</div>

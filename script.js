@@ -6,6 +6,8 @@ const codeContainer = document.querySelectorAll('.code-container')[2];
 const codeDisplay = document.createElement('div');
 const previewButton = document.querySelector('#preview-btn');
 
+
+
 const keyframesRules = findKeyframesRule("slideshow");
 
 function findKeyframesRule(rule) {
