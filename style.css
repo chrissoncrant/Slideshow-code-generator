@@ -91,6 +91,10 @@ p {
     margin: 6px 0 18px;
 }
 
+textarea {
+    display: block;
+}
+
 .bd {
     border: 1px solid black;
 }
