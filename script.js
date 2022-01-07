@@ -2,7 +2,7 @@ const imageCount = document.querySelector('#img-count');
 const fadeTime = document.querySelector('#fade-time');
 const holdTime = document.querySelector('#hold-time');
 const codeButton = document.querySelector('#code-btn');
-const codeContainer = document.querySelectorAll('.code-container')[2];
+const codeWrapper = document.querySelector('.code-wrapper');
 const codeDisplay = document.createElement('div');
 const previewButton = document.querySelector('#preview-btn');
 const errorDiv = document.querySelector("#error");
@@ -155,6 +155,8 @@ codeButton.addEventListener('click', () => {
     }
 
     errorDiv.style.opacity = "0";
+
+    document.querySelector("#bottom-copy-btn").style.opacity = 1;
     
     let imageCountValue = Number(imageCount.value);
     let fadeTimeValue = Number(fadeTime.value);
@@ -192,8 +194,8 @@ codeButton.addEventListener('click', () => {
     let secondHalf = `${createSlideString(imageCountValue, animationDelay)}`;
 
     codeDisplay.classList.add('white-space');
-    codeContainer.textContent = "Here's your code!";
+    codeWrapper.textContent = "Here's your code!";
     codeDisplay.textContent = firstHalf + secondHalf;
-    codeContainer.appendChild(codeDisplay);
+    codeWrapper.appendChild(codeDisplay);
 })
 
