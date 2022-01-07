@@ -172,8 +172,11 @@ codeButton.addEventListener('click', () => {
 
     let k3 = Number((k1 + k2).toFixed(2));
 
-   
-    let firstHalf = `
+    let firstHalf;
+
+    function setFirstHalf() {
+        if (imageCountValue > 1) {
+            firstHalf = `
 .slideshow { 
     animation: slideshow ${animationDuration}s infinite linear;
 }
@@ -190,6 +193,25 @@ codeButton.addEventListener('click', () => {
     }
 }
     `;
+        } else {
+            firstHalf = `
+.slideshow { 
+    animation: slideshow ${animationDuration}s infinite linear;
+}
+
+@keyframes slideshow {
+    ${k1}% {
+        opacity: 1;
+    }
+    ${k2}% {
+        opacity: 1;
+    }
+}
+    `;
+        }
+    }
+
+    setFirstHalf();
 
     let secondHalf = `${createSlideString(imageCountValue, animationDelay)}`;
 
