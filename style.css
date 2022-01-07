@@ -4,6 +4,7 @@
     --main-bg: #e0fffa;
     --frame-bg: #D4EFFF;
     --shadow-color: 171deg 34% 58%;
+    --error-color: #ff7300;
     --shadow-elevation-low:
       0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
       0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
@@ -43,6 +44,7 @@ body {
     -webkit-font-smoothing: antialiased;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: var(--black);
+    position: relative;
     /* border: 4px teal solid; */
 }
 
@@ -281,7 +283,7 @@ button {
     left: 50%;
     transform: translateX(-50%);
     margin-top: 16px;
-    color: red;
+    color: var(--error-color);
     opacity: 0;
     transition: 0.2s ease;
 }

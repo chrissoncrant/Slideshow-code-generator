@@ -7,8 +7,6 @@ const codeDisplay = document.createElement('div');
 const previewButton = document.querySelector('#preview-btn');
 const errorDiv = document.querySelector("#error");
 
-
-
 const keyframesRules = findKeyframesRule("slideshow");
 
 function findKeyframesRule(rule) {
@@ -45,9 +43,14 @@ function createSlideString(imageCountValue, animationDelay) {
     return finalStr;
 };
 
-document.querySelector('.white-space.css-code').textContent = `CSS:
+document.querySelector('.white-space.html-code').textContent = `    <div class="frame">
+        <img class="slides slide-1 slideshow" 
+        src="#"  alt="...">
+        <img class="slides slide-2 slideshow" 
+        src="#" alt="...">
+    </div>`;
 
-    .frame {
+document.querySelector('.white-space.css-code').textContent = `    .frame {
         position: relative;
         border: 20px solid white;
         background-color: white;
@@ -65,34 +68,25 @@ document.querySelector('.white-space.css-code').textContent = `CSS:
         width: 100%;
     }`;
 
-document.querySelector('.white-space.html-code').textContent = `HTML:
-
-    <div class="frame">
-        <img class="slides slide-1 slideshow" 
-        src="#"  alt="...">
-        <img class="slides slide-2 slideshow" 
-        src="#" alt="...">
-    </div>`;
-
 previewButton.addEventListener('click', () => {
     if (fadeTime.value === '' || fadeTime.value <= 0) {
-        fadeTime.style.border = "red solid 1px";
-        fadeTime.style.boxShadow = "0px 0px 8px red";
+        fadeTime.style.border = "var(--error-color) solid 1px";
+        fadeTime.style.boxShadow = "0px 0px 8px var(--error-color)";
         errorDiv.style.opacity = "1";
         return;
     } else {
         fadeTime.style.border = "1px solid hsl(var(--shadow-color) / 0.34)";
-        fadeTime.style.boxShadow = "0px 0px 0px red";
+        fadeTime.style.boxShadow = "0px 0px 0px var(--error-color)";
     }
 
     if (holdTime.value === '' || holdTime.value <= 0) {
-        holdTime.style.border = "red solid 1px";
-        holdTime.style.boxShadow = "0px 0px 8px red";
+        holdTime.style.border = "var(--error-color) solid 1px";
+        holdTime.style.boxShadow = "0px 0px 8px var(--error-color)";
         errorDiv.style.display = "block";
         return;
     } else {
         holdTime.style.border = "1px solid hsl(var(--shadow-color) / 0.34)";
-        holdTime.style.boxShadow = "0px 0px 0px red";
+        holdTime.style.boxShadow = "0px 0px 0px var(--error-color)";
     }
 
     errorDiv.style.opacity = "0";
@@ -136,28 +130,28 @@ codeButton.addEventListener('click', () => {
     if (fadeTime.value === '' || holdTime.value === '') {
         errorDiv.textContent = "Please enter Fade and Hold values.";
         errorDiv.style.opacity = "1";
-        fadeTime.style.border = "red solid 1px";
-        fadeTime.style.boxShadow = "0px 0px 8px red";
-        holdTime.style.border = "red solid 1px";
-        holdTime.style.boxShadow = "0px 0px 8px red";
+        fadeTime.style.border = "var(--error-color) solid 1px";
+        fadeTime.style.boxShadow = "0px 0px 8px var(--error-color)";
+        holdTime.style.border = "var(--error-color) solid 1px";
+        holdTime.style.boxShadow = "0px 0px 8px var(--error-color)";
         return;
     } else {
         errorDiv.textContent = "Only numbers above zero will work.";
         fadeTime.style.border = "1px solid hsl(var(--shadow-color) / 0.34)";
-        fadeTime.style.boxShadow = "0px 0px 0px red";
+        fadeTime.style.boxShadow = "0px 0px 0px var(--error-color)";
         holdTime.style.border = "1px solid hsl(var(--shadow-color) / 0.34)";
-        holdTime.style.boxShadow = "0px 0px 0px red";
+        holdTime.style.boxShadow = "0px 0px 0px var(--error-color)";
 
     }
     
     if (imageCount.value === ''  || imageCount.value <= 0) {
-        imageCount.style.border = "red solid 1px";
-        imageCount.style.boxShadow = "0px 0px 8px red";
+        imageCount.style.border = "var(--error-color) solid 1px";
+        imageCount.style.boxShadow = "0px 0px 8px var(--error-color)";
         errorDiv.style.opacity = "1";
         return;
     } else {
         imageCount.style.border = "1px solid hsl(var(--shadow-color) / 0.34)";
-        imageCount.style.boxShadow = "0px 0px 0px red";
+        imageCount.style.boxShadow = "0px 0px 0px var(--error-color)";
     }
 
     errorDiv.style.opacity = "0";
