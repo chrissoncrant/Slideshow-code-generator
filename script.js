@@ -6,6 +6,10 @@ const codeWrapper = document.querySelector('.code-wrapper');
 const codeDisplay = document.createElement('div');
 const previewButton = document.querySelector('#preview-btn');
 const errorDiv = document.querySelector("#error");
+const copyButtons = document.querySelectorAll(".copy-btn");
+const htmlTextArea = document.querySelector("#html-area");
+const cssDiv = document.querySelector(".css-code");
+
 
 const keyframesRules = findKeyframesRule("slideshow");
 
@@ -26,8 +30,10 @@ function findKeyframesRule(rule) {
 function createSlideString(imageCountValue, animationDelay) {
     let finalStr = '';
     for (let i = 1; i < imageCountValue + 1; i++) {
+
         if (i === 1) {
             finalStr += `
+
 .slide-1 {
     animation-delay: 0s;
 }
@@ -43,7 +49,7 @@ function createSlideString(imageCountValue, animationDelay) {
     return finalStr;
 };
 
-document.querySelector('.white-space.html-code').textContent = `    <div class="frame">
+document.querySelector('#html-area').textContent = `    <div class="frame">
         <img class="slides slide-1 slideshow" 
         src="#"  alt="...">
         <img class="slides slide-2 slideshow" 
@@ -125,7 +131,6 @@ previewButton.addEventListener('click', () => {
     // console.log(keyframesRules);
 })
 
-
 codeButton.addEventListener('click', () => {
     if (fadeTime.value === '' || holdTime.value === '') {
         errorDiv.textContent = "Please enter Fade and Hold values.";
@@ -173,7 +178,6 @@ codeButton.addEventListener('click', () => {
     let k3 = Number((k1 + k2).toFixed(2));
 
     let firstHalf;
-
     function setFirstHalf() {
         if (imageCountValue > 1) {
             firstHalf = `
@@ -191,9 +195,7 @@ codeButton.addEventListener('click', () => {
     ${k3}% {
         opacity: 0;
     }
-}
-    `;
-        } else {
+}`;} else {
             firstHalf = `
 .slideshow { 
     animation: slideshow ${animationDuration}s infinite linear;
@@ -206,18 +208,47 @@ codeButton.addEventListener('click', () => {
     ${k2}% {
         opacity: 1;
     }
-}
-    `;
+}`;
         }
     }
-
     setFirstHalf();
 
     let secondHalf = `${createSlideString(imageCountValue, animationDelay)}`;
 
     codeDisplay.classList.add('white-space');
     codeWrapper.textContent = "Here's your code!";
-    codeDisplay.textContent = firstHalf + secondHalf;
+    if (imageCountValue === 1) {
+        codeDisplay.textContent = firstHalf
+    } else {
+        codeDisplay.textContent = firstHalf + secondHalf;
+    }
     codeWrapper.appendChild(codeDisplay);
 })
+
+for (let i = 0; i < copyButtons.length; i++) {
+    switch(i) {
+        case 0: 
+            copyButtons[i].addEventListener('click', () => {
+                let text = htmlTextArea.value;
+                navigator.clipboard.writeText(text);
+            })
+            break;
+        case 1: 
+            copyButtons[i].addEventListener('click', () => {
+                let text = cssDiv.textContent;
+                navigator.clipboard.writeText(text);
+            })
+            break;
+
+        case 2: 
+            copyButtons[i].addEventListener('click', () => {
+                console.log(codeDisplay.textContent);
+                let text = codeDisplay.textContent;
+                navigator.clipboard.writeText(text);
+            })
+            break;
+    }
+}
+
+
 

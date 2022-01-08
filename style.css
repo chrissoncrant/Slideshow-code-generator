@@ -93,6 +93,12 @@ p {
 
 textarea {
     display: block;
+    background-color: var(--black);
+    color: white;
+    resize: none;
+    width: 100%;
+    height: 130px;
+    border: none;
 }
 
 .bd {
