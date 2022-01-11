@@ -228,6 +228,13 @@ textarea {
     animation-delay: 15s;
 }
 
+#image-source {
+    font-size: 14px;
+    width: 75%;
+    margin: 0 auto 3px;
+    font-style: italic;
+}
+
 /*Input Styling*/
 
 .values-container {

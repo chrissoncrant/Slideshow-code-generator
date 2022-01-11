@@ -159,6 +159,22 @@ codeButton.addEventListener('click', () => {
         imageCount.style.boxShadow = "0px 0px 0px var(--error-color)";
     }
 
+    if (imageCount.value.includes(".")) {
+        imageCount.style.border = "var(--error-color) solid 1px";
+        imageCount.style.boxShadow = "0px 0px 8px var(--error-color)";
+        errorDiv.textContent = "No decimals for image count please."
+        errorDiv.style.opacity = "1";
+        return;
+    } else {
+        imageCount.style.border = "1px solid hsl(var(--shadow-color) / 0.34)";
+        imageCount.style.boxShadow = "0px 0px 0px var(--error-color)";
+        errorDiv.textContent = "Only numbers above zero will work."
+    }
+
+    imageCount.value.includes(".")
+
+    console.log(imageCount.value)
+
     errorDiv.style.opacity = "0";
 
     document.querySelector("#bottom-copy-btn").style.opacity = 1;
