@@ -63,7 +63,6 @@ document.querySelector('.white-space.css-code').textContent = `    .frame {
         border-radius: 12px;
         width: 600px;
         height: 340px;
-        
     }
 
     .slides {

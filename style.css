@@ -99,6 +99,7 @@ textarea {
     width: 100%;
     height: 130px;
     border: none;
+    outline: none;
 }
 
 .bd {
@@ -309,12 +310,22 @@ button {
     opacity: 0.8;
 }
 
+.copy-icon:active {
+    opacity: 0.4;
+}
+
+#preview-btn {
+    margin-bottom: 45px;
+}
+
 #bottom-copy-btn {
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 
-
+#preview-btn:active, #bottom-copy-btn:active {
+    opacity: 0.8;
+}
 
 .code-container {
     background-color: var(--black);
@@ -347,9 +358,7 @@ button {
     text-align: center;
 }
 
-#preview-btn {
-    margin-bottom: 45px;
-}
+
 
 .white-space {
     white-space: pre;
