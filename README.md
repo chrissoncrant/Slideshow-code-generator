@@ -29,7 +29,7 @@ Here's a screenshot of the result:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [The Slideshow Code Generator](https://chrissoncrant.github.io/Slideshow-code-generator/)
 
 ## My Process
 
