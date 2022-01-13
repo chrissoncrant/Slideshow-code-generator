@@ -6,10 +6,11 @@
 
 - [Introduction](#introduction)
 - [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
+  - [Built With](#built-with)
+  - [What I Learned](#what-i-learned)
+  - [Continued Development](#continued-development)
   - [Resources](#resources)
+  - [Tools Utilized](#tools-utilized)
 
 ## Introduction
 
@@ -30,7 +31,7 @@ Here's a screenshot of the result:
 
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-## My process
+## My Process
 
 I use my iPad and Apple Pencil with the Goodnotes app to plan and brainstorm, make project to-do lists, etc. It is a crucial component of my workflow. 
 
@@ -89,7 +90,7 @@ I found some new images, then opened the tool, copied and pasted the generated c
 
 Once done with that, I wrote this. 
 
-### Built with
+### Built With
 
 - Semantic HTML5 markup
 - CSS3
@@ -97,7 +98,7 @@ Once done with that, I wrote this.
 - Git
 - GitHub
 
-### What I learned
+### What I Learned
 
 - To change the keyframe percentages dynamically, I had to do some research. This led to my introduction to the CSSOM. I spent quite a bit of time getting more familiar with this and how to navigate the object. I was super pumped when I was able to manipulate the CSSOM in the manner that the tool required. Those moments are what it's all about!
 - I learned about CSS animations, the associated properties, how keyframe percentages are related, and how to calculate them accordingly.
@@ -108,7 +109,7 @@ Once done with that, I wrote this.
   - [Daring Fireball](https://daringfireball.net/projects/markdown/)
   - [Dingus](https://daringfireball.net/projects/markdown/dingus)
 
-### Continued development
+### Continued Development
 
 Moving forward, several areas that I will improve upon in future projects are:
 - Optimizing CSS by using better class names and applying the recommendations within this excellent guide called [Maintainable CSS](https://maintainablecss.com/chapters/introduction/).
