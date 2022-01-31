@@ -366,3 +366,17 @@ button {
     height: 1px;
 }
 
+#mobile-error {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    #mobile-error {
+        display: block;
+        color: red;
+        margin-bottom: 10px;
+    }
+}
+
+
+
